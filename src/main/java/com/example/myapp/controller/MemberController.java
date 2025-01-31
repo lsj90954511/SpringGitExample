@@ -34,6 +34,11 @@ public class MemberController {
 	@Autowired
 	private MemberModelAssembler assembler;
 	
+	@GetMapping("/test")
+	public String test() {
+		return "Hello";
+	}
+	
     @GetMapping
     public ResponseEntity<CollectionModel<EntityModel<Member>>> getAllMembers() {
         List<EntityModel<Member>> members = memberService.getAllMembers().stream()
